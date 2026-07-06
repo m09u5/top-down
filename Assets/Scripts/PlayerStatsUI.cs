@@ -9,7 +9,13 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TMP_Text attackSpeedText;
     [SerializeField] private TMP_Text stepsText;
     [SerializeField] private TMP_Text killCountText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("MoveStats")]
+    [SerializeField]  private TMP_Text walkSpeedText;
+    [SerializeField]  private TMP_Text sprintSpeedText;
+    
+    [SerializeField] private PlayerMovement playerMovement;
+    
+    
     private void OnEnable()
     {
         Refresh();
@@ -29,7 +35,9 @@ public class PlayerStats : MonoBehaviour
         attackSpeedText.text = $"Attack speed: {attackSpeed}";
         stepsText.text = $"Steps: {steps}";
         killCountText.text = $"kill count: {killCount}";
-        
+        walkSpeedText.text = $"Walk speed: {playerMovement.WalkSpeed}";
+        sprintSpeedText.text = $"Sprint speed: {playerMovement.SprintSpeed}";
+
     }
     
 }

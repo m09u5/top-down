@@ -3,8 +3,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-   private float walkSpeed = 2f;
-   private float sprintSpeed = 10f;
+   [SerializeField]private float walkSpeed = 2f;
+   [SerializeField]private float sprintSpeed = 10f;
+   
+   public float WalkSpeed => walkSpeed;
+   public float SprintSpeed => sprintSpeed;
+   
    private float currentSpeed;
    private Rigidbody2D rb;
    private Vector2 moveInput;
