@@ -17,12 +17,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private EnemyState CurrentState;
 
     [SerializeField]private float rangeDistance = 5f;
+    private Vector2 direction;
     private float distance;
     private Vector2 lastSeen;
     private Vector3 spawnLocation;
+    private Animator animator;
     void Start()
     {
-        Animator animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         spawnLocation = transform.position;
         lastSeen = transform.position;
         CurrentState = EnemyState.Idle;
@@ -58,8 +60,16 @@ public class EnemyMovement : MonoBehaviour
         
         Vector2 direction = (target - (Vector2)transform.position).normalized;
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
-        // animator.SetFloat("MoveX",  direction.x);
-        // animator.SetFloat("MoveY", direction.y);
+        if (Vector2.Distance(transform.position, target) < 0.05f)
+        {
+            animator.SetBool("isMoving", false);
+        }
+        else
+        {
+            animator.SetBool("isMoving", true);
+            animator.SetFloat("MoveX",  direction.x);
+            animator.SetFloat("MoveY", direction.y);
+        }
     }
 
     void CanSeePlayer()
