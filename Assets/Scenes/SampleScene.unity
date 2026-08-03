@@ -2346,6 +2346,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3945062258320630266, guid: a6267ac520a5a40c89598f7fdd01737d, type: 3}
   m_PrefabInstance: {fileID: 8625698629006938835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &691763604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691763597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a0fffbcb5a04b79b65629bb0a38d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDeath
+--- !u!114 &691763605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691763597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4265ad3231ce44afa82e619f171d6b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  objectHealth: 20
+  deathHandler: {fileID: 691763604}
 --- !u!1 &704415483
 GameObject:
   m_ObjectHideFlags: 0
@@ -13799,7 +13825,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3945062258320630266, guid: a6267ac520a5a40c89598f7fdd01737d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 691763605}
+    - targetCorrespondingSourceObject: {fileID: 3945062258320630266, guid: a6267ac520a5a40c89598f7fdd01737d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 691763604}
   m_SourcePrefab: {fileID: 100100000, guid: a6267ac520a5a40c89598f7fdd01737d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
